@@ -1,0 +1,20 @@
+server-app:
+  build:
+    context: ./server
+    dockerfile: Dockerfile.dev
+  container_name: server-app
+  restart: always
+  network:
+    - backlogBooks
+  .env-file:
+    - ./.env
+  volumes:
+    - ./server:/usr/source/app
+    - ./logs:/usr/src/app/node_modules
+  commands: sh -c "npm install && run dev"
+  ports:
+    - "3001:3000"
+
+network:
+  backlogBooks:
+    driver: bridge

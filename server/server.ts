@@ -1,0 +1,30 @@
+import express, {Request, Response} from "express";
+import dotenv from "dotenv";
+import router from "./routes";
+import cors from "cors";
+import {corsOptions} from "./configs/corsConfig";
+
+dotenv.config();
+
+const app = express();
+
+app.use(cors(corsOptions));
+
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+app.use(express.urlencoded({extended: true}));
+
+app.use("/", router);
+
+app.use((_req: Request, res: Response) => {
+  res.status(404).json({
+    success: false,
+    error: "Rota não encontrada",
+  });
+});
+
+app.listen(PORT, function () {
+  console.log(`Servidor rodando em http://localhost:${process.env.PORT}`);
+});

@@ -1,5 +1,7 @@
-.panel-container {
+.painel-container {
     height: 100vh;
-    width: 30vw;
+    width: 18vw;
     color: #272727;
+    border-radius: 4px;
+    box-shadow: 5px 5px 9px #4d2c07;
 }

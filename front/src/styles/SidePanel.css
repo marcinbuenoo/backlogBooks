@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 .painel-container {
     display: flex;
     flex-direction: column;
@@ -10,11 +12,32 @@
     border-radius: 4px;
     border: 0.8px solid #4d2c07;
     box-shadow: 5px 5px 9px #4d2c07;
+    gap: 500px;
 }
 
 .panel-button-list {
     display: flex;
     flex-direction: column;
+    gap: 15px;
     justify-content: center;
     align-items: center;
+}
+
+.button-shape {
+    padding: 40px;
+    border: 0.1px solid #4d2c07;
+    border-radius: 14px;
+    box-shadow: 5px 5px 9px #4d2c07;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-shape:hover {
+    transform: translateY(-5px);
+}
+
+.button-shape a {
+    font-family: "SN", sans-serif;
+    color: #4d2c07;
+    font-weight: 600;
+    font-size: large;
 }
